@@ -20,6 +20,12 @@ export const auth = betterAuth({
   trustedOrigins: [
     process.env.CLIENT_URL || "https://fitnexus-client-flame.vercel.app",
   ],
+  advanced: {
+    defaultCookieAttributes: {
+      sameSite: "none",
+      secure: true,
+    },
+  },
   user: {
     additionalFields: {
       role: {
